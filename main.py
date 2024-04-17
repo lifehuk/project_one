@@ -1,22 +1,29 @@
+
 from pygame import *
 window = display.set_mode((700, 500))
 display.set_caption('Выучи китайский')
-background = transform.scale(image.load('background.png'), (700, 500))
+background = transform.scale(image.load('background.jpg'), (700, 500))
 
 game = True
 while game:
-   window.blit(background, (0, 0))
+    window.blit(background, (0, 0))
 
+    for i in event.get():
+        if i.type == QUIT:
+            game = False
+    
+    display.update()
+    if finish != True:
+       window.blit(background, (0, 0))
 
-
-
-for i in event.get():
-    if i.type == QUIT:
-        game = False
 
 mixer.init()
 mixer.music.load('China.ogg')
 mixer.music.play()
+
+
+
+
 
 
 
@@ -32,13 +39,16 @@ chitatas = {
     'Конфуций': 'Благородный муж предъявляет требования к себе, низкий человек предъявляет требования к людям.',
     'Конфуций': 'Можно всю жизнь руководствоваться одним словом: это слово - взаимность.',
     'Конфуций': 'Легче зажечь одну свечу, чем клясть темноту.',
+    'Конфуций': 'Правильные поступки приводят к правильному результату на их дела.', 
+    'Лао Цзы': 'Человек, стоящий на цыпочках, не может долго стоять.',
+    'Лао Цзы': 'Ходьба побеждает холод, покой побеждает жару. Спокойствие создаёт порядок в мире.',
+    'Чжуан-цзы': 'То, что сделало прекрасной мою жизнь, сделает прекрасной и мою смерть.',
+    'Лао Цзы': 'Тот, кто знает, не говорит. Тот, кто говорит, не знает.', 
+
+
+
     
 }
-
-
-
-
-
 
 
 
