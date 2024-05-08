@@ -6,21 +6,61 @@ background = transform.scale(image.load('China.jpg'), (700, 500))
 font.init()
 score = 0
 missing = 0
-font1 = font.Font(None, 60)
-font2 = font.Font(None, 80)
-
+font1 = font.Font(None, 40)
+font2 = font.Font(None, 40)
+font3 = font.Font(None, 40)
+font4 = font.Font(None, 40)
+font5 = font.Font(None, 40)
+font6 = font.Font(None, 40)
+font7 = font.Font(None, 40)
 
 game = True
 finish = False
 while game:
     text1 = font1.render('Счёт:' + str(score), 1, (255, 255, 255))
     text2 = font2.render('Пропущено:' + str(missing), 1, (255, 255, 255))
-    question1 = ('Кто сказал цитату: Твой дом там, где спокойны твои мысли.? ')
-    text3 = font1.render('Первый вопрос:' + str(question1), 1, (255, 255, 255))
+    question1 = ('Кто сказал цитату: Твой дом там, где спокойны твои мысли.?')
+    text3 = font3.render('Первый вопрос:' + str(question1), 1, (255, 255, 255))
+    variant1 = 'Конфуций'
+    variant2 = 'Лао-Цзы'
+    variant3 = 'Чжуан-цзы'
+    text4 = font4.render(variant1, 1, (255, 255, 255))
+    text5 = font5.render(variant2, 1, (255, 255, 255))
+    text6 = font6.render(variant3, 1, (255, 255, 255))
+
+
+
+
+    # question2 = ('Знать, что нужно сделать, и не делать этого - это... Продолжите фразу.')
+    # text4 = font4.render('Второй вопрос:' + str(question2), 1, (255, 255, 255))
+    # variant1 = 
+    # variant2 = 
+    # variant3 = 
+
+ # variant1 = 
+    # variant2 = 
+    # variant3 = 
+ 
+    # question4 = ('Какого места, согласно цитате из Книги изречений, нет в котле с кипящей водой?')
+    # text6 = font6.render('Четвёртый вопрос:' + str(question4), 1, (255, 255, 255))
+    # variant1 = 
+    # variant2 =
+    # variant3 =
+
+    # qusetion5 = ('')
+    # text7 = font7.render('Пятый вопрос:' + str(question5), 1, (255, 255, 255))
+    # variant1 = 
+    # variant2 = 
+    # variant3 = 
     window.blit(background, (0, 0))
     window.blit(text1, (10, 20))
     window.blit(text2, (10, 50))
-    window.blit(text3, (20, 30))
+    window.blit(text3, (30, 200))
+    window.blit(text4, (70, 350))
+    window.blit(text5, (250, 400))
+    window.blit(text6, (30, 100))    # question3 = ('Легче зажечь одну свечу, чем клясть темноту. Чья эта цитата?')
+    # text5 = font5.render('Третий вопрос:' + str(question3), 1, (255, 255, 255))
+   
     for i in event.get():
         if i.type == QUIT:
             game = False
@@ -34,18 +74,19 @@ mixer.init()
 mixer.music.load('China.ogg')
 mixer.music.play()
 
-    
-question2 = ('Легче зажечь одну свечу, чем клясть темноту. Чья эта цитата?')
+
+
+
 
 result = ''
 
-if result == 8/8:
+if result == 5/5:
     print('Отличный результат')
-if result == 7/8 or 6/8:
+if result == 4/5:
     print('Хороший результат')
-if result == 5/8 or 4/8:
+if result == 3/5:
     print('Удовлетворительный результат')
-if result == 3/8 or 2/8 or 1/8 or 0/8:
+if result == 2/5 or 1/5 or 0/5:
     print('Нужно много работать')
 
 
