@@ -8,58 +8,44 @@ score = 0
 missing = 0
 font1 = font.Font(None, 40)
 font2 = font.Font(None, 40)
-font3 = font.Font(None, 40)
-font4 = font.Font(None, 40)
+font3 = font.Font(None, 26)
+font4 = font.Font(None, 30)
 font5 = font.Font(None, 40)
 font6 = font.Font(None, 40)
 font7 = font.Font(None, 40)
 
+text_collor = (255, 0, 0)
+
+
+mixer.init()
+mixer.music.load('China.mp3')
+mixer.music.play()
+
 game = True
 finish = False
 while game:
-    text1 = font1.render('Счёт:' + str(score), 1, (255, 255, 255))
-    text2 = font2.render('Пропущено:' + str(missing), 1, (255, 255, 255))
+    text1 = font1.render('Счёт:' + str(score), 1, text_collor)
+    text2 = font2.render('Пропущено:' + str(missing), 1, text_collor)
     question1 = ('Кто сказал цитату: Твой дом там, где спокойны твои мысли.?')
-    text3 = font3.render('Первый вопрос:' + str(question1), 1, (255, 255, 255))
+    text3 = font3.render('Первый вопрос:' + str(question1), 1, text_collor)
     variant1 = 'Конфуций'
     variant2 = 'Лао-Цзы'
     variant3 = 'Чжуан-цзы'
-    text4 = font4.render(variant1, 1, (255, 255, 255))
-    text5 = font5.render(variant2, 1, (255, 255, 255))
-    text6 = font6.render(variant3, 1, (255, 255, 255))
+    text4 = font4.render(variant1, 1, text_collor)
+    text5 = font5.render(variant2, 1, text_collor)
+    text6 = font6.render(variant3, 1, text_collor)
 
 
 
 
-    # question2 = ('Знать, что нужно сделать, и не делать этого - это... Продолжите фразу.')
-    # text4 = font4.render('Второй вопрос:' + str(question2), 1, (255, 255, 255))
-    # variant1 = 
-    # variant2 = 
-    # variant3 = 
-
- # variant1 = 
-    # variant2 = 
-    # variant3 = 
- 
-    # question4 = ('Какого места, согласно цитате из Книги изречений, нет в котле с кипящей водой?')
-    # text6 = font6.render('Четвёртый вопрос:' + str(question4), 1, (255, 255, 255))
-    # variant1 = 
-    # variant2 =
-    # variant3 =
-
-    # qusetion5 = ('')
-    # text7 = font7.render('Пятый вопрос:' + str(question5), 1, (255, 255, 255))
-    # variant1 = 
-    # variant2 = 
-    # variant3 = 
+    
     window.blit(background, (0, 0))
     window.blit(text1, (10, 20))
     window.blit(text2, (10, 50))
     window.blit(text3, (30, 200))
     window.blit(text4, (70, 350))
-    window.blit(text5, (250, 400))
-    window.blit(text6, (30, 100))    # question3 = ('Легче зажечь одну свечу, чем клясть темноту. Чья эта цитата?')
-    # text5 = font5.render('Третий вопрос:' + str(question3), 1, (255, 255, 255))
+    window.blit(text5, (450, 350))
+    window.blit(text6, (250, 350))    
    
     for i in event.get():
         if i.type == QUIT:
@@ -69,10 +55,6 @@ while game:
     if finish != True:
        window.blit(background, (0, 0))
 
-
-mixer.init()
-mixer.music.load('China.ogg')
-mixer.music.play()
 
 
 
@@ -165,3 +147,26 @@ chitatas = {
 #                 Student.fire()
 
 
+# question2 = ('Знать, что нужно сделать, и не делать этого - это... Продолжите фразу.')
+    # text7 = font4.render('Второй вопрос:' + str(question2), 1, (text_color))
+    # variant1 = глупость
+    # variant2 = трусость
+    # variant3 = грех
+    
+    # question3 = ('')
+    # text11 = font5.render('Третий вопрос:' + str(question3) 1, (text_color))
+    # variant1 = 
+    # variant2 = 
+    # variant3 = 
+ 
+    # question4 = ('Какого места, согласно цитате из Книги изречений, нет в котле с кипящей водой?')
+    # text15 = font6.render('Четвёртый вопрос:' + str(question4), 1, (text_color))
+    # variant1 = холодного
+    # variant2 = горячего
+    # variant3 = нейтрального
+
+    # qusetion5 = ('')
+    # text19 = font7.render('Пятый вопрос:' + str(question5), 1, (text_color))
+    # variant1 = 
+    # variant2 = 
+    # variant3 = 
